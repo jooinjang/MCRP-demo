@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  mcrp-demo:
+    build: .
+    ports:
+      - "${HOST_PORT:-5001}:5001"
+    environment:
+      # Flask 서버 설정
+      - FLASK_HOST=0.0.0.0
+      - FLASK_PORT=5001
+      - FLASK_DEBUG=${FLASK_DEBUG:-false}
+
+      # 데이터 저장 경로
+      - DATA_DIR=/app/data
+
+      # 외부 AI API 설정
+      - EXTERNAL_API_BASE=${EXTERNAL_API_BASE:-http://your-ai-server:8000}
+      - AI_API_TIMEOUT=${AI_API_TIMEOUT:-10}
+
+    volumes:
+      # 데이터 영속성
+      - chat_data:/app/data
+      # 개발 모드일 때만 코드 변경 실시간 반영 (필요시 주석 해제)
+      # - .:/app
+
+    restart: unless-stopped
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  chat_data:
+    driver: local

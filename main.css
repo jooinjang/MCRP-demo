@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 커스텀 스크롤바 스타일 */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.3) transparent;
+}
+
+/* Webkit 브라우저용 스크롤바 스타일 */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.3);
+  border-radius: 20px;
+  border: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(156, 163, 175, 0.6);
+}
+
+/* 채팅 목록용 스크롤바 */
+.chat-list-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.2) transparent;
+}
+
+.chat-list-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-list-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-list-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.2);
+  border-radius: 20px;
+  border: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.chat-list-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(156, 163, 175, 0.4);
+}
+
+/* 스크롤 애니메이션 개선 */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* 전체 높이 보장 */
+html,
+body {
+  height: 100%;
+}
+
+/* 메인 채팅 영역 높이 고정 */
+.main-chat-area {
+  height: calc(100vh - 4rem);
+}

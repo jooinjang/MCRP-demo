@@ -1,0 +1,95 @@
+# 환경변수 파일 (민감한 정보 포함)
+.env
+.env.local
+.env.*.local
+
+# 로컬 실행 전용 파일들 (실제 서버 정보 포함)
+env.local
+docker-compose.local.yml
+run-local.sh
+stop-local.sh
+README_LOCAL.md
+test_api.local.py
+
+# 테스트 파일들 (민감한 정보 포함 가능)
+test_api.py
+test_*.py
+*_test.py
+
+# 채팅 데이터 (사용자 개인정보 포함)
+chat_data/
+*.json
+*.backup
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 가상환경
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 로그 파일
+*.log
+logs/
+
+# 임시 파일
+tmp/
+temp/
+*.tmp
+
+# Docker 볼륨 데이터
+docker-volumes/
+
+# 테스트 관련
+.coverage
+.pytest_cache/
+.tox/
+htmlcov/
+
+# 백업 파일
+*.bak
+backup/ 

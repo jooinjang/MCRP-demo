@@ -1,0 +1,15 @@
+# 웹 프레임워크
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# HTTP 클라이언트
+requests==2.31.0
+
+# WSGI 서버
+gunicorn==21.2.0
+
+# 환경변수 관리
+python-dotenv==1.0.0
+
+# 시간 처리
+python-dateutil==2.8.2 
