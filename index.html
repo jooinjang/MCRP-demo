@@ -1446,7 +1446,7 @@
         try {
           // 로딩 상태 시작 - CSS 클래스로 스타일 적용
           confirmBtn.disabled = true;
-          confirmBtn.textContent = "캐릭터 선택 중...";
+          confirmBtn.textContent = "채팅 생성 중...";
           confirmBtn.classList.remove("btn-enabled");
           confirmBtn.classList.add("btn-disabled");
 
@@ -1463,19 +1463,7 @@
             item.classList.add("item-disabled");
           });
 
-          // 외부 API에 캐릭터 선택 알림
-          if (selectedCharacter.id) {
-            await fetch("/api/select_character", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ character_number: selectedCharacter.id }),
-            });
-          }
-
-          // 채팅 생성 중 메시지 변경
-          confirmBtn.textContent = "채팅 생성 중...";
-
-          // 새 채팅 생성
+          // 새 채팅 생성 (백엔드에서 캐릭터 선택 API 호출 처리)
           await createNewChatWithCharacter(selectedCharacter);
           closeCharacterModal();
         } catch (error) {
