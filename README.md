@@ -341,6 +341,4 @@ docker-compose logs -f mcrp-demo
 FLASK_DEBUG=true docker-compose up
 ```
 
-## �� 라이선스
-
 MIT License
